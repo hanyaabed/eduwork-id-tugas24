@@ -22,4 +22,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Prevent search engines from indexing the site
+    <IfModule mod_headers.c>
+        Header set X-Robots-Tag "noindex, nofollow"
+    </IfModule>
 </IfModule>
