@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function cart()
     {
-        return view('cart');
+        return view('cart.index');
     }
 
     public function click($product_id)

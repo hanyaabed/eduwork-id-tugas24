@@ -26,11 +26,11 @@
                 @foreach ($products as $product)
                     <div class="col-md-3 col-sm-6">
                         <div class="card h-100">
-                            <img src="{{ $product->image }}" class="card-img-top product-image-size" alt="products">
+                            <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top product-image-size" alt="products">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->name }}</h5>
-                                <p class="card-text">{{ $product->price }}</p>
-                                <a href="#" class="btn btn-success w-100">Add to Cart</a>
+                                <p class="card-text">Rp. {{ number_format($product->price, 0, ",", ".") }}</p>
+                                <a href="{{ route('product.click', $product->id) }}" target="_blank" class="btn btn-success w-100">Beli Sekarang</a>
                             </div>
                         </div>
                     </div>
